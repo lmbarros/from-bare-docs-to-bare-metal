@@ -11,7 +11,7 @@
 /*
  * Make `_start` visible to the linker. By the way, `_start` happens to be the
  * point the linker uses by default as the entry point of the program. In other
- * other, our program will start running from there.
+ * other, our program will start running from `_start`.
  */
 .global _start
 
@@ -22,13 +22,15 @@ ldr r0, =0x3f200000
 
 /*
  * Store on r1 a number with only the bit 18 set. This is what we need to store
- * in the GPFSEL1 register to configure the GPIO pin 16 to as an output pin.
+ * in the GPFSEL1 register to configure the GPIO pin 16 to work as an output
+ * pin.
  */
 ldr r1, =0x00040000
 
 /*
- * So, store it. GPFSEL1 is located at 0x7E20_0004, or 4 bytes beyond the GPIO
- * base address.
+ * So, store it. GPFSEL1 is located at 0x3F20_0004, or 4 bytes beyond the GPIO
+ * base address. This instruction stores the value taken from r1 to the address
+ * given by whatever we have on r0 plus an offset of 4 bytes.
  */
 str r1, [r0, #4]
 
@@ -39,7 +41,7 @@ str r1, [r0, #4]
 ldr r1, =0x00010000
 
 /*
- * Store that value. GPSET0 is located at 0x7E20_0004, or 28 (=0x1C_ bytes
+ * Store that value. GPSET0 is located at 0x3F20_001C, or 28 (or 0x1C) bytes
  * beyond the GPIO base address. This causes the GPIO pin to go high, turning on
  * our LED.
  */
