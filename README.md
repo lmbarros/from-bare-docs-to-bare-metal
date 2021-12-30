@@ -15,3 +15,8 @@ metal target.
 To build, just run the `build.sh` script (assuming you are running a Linux
 system). To run the generated `kernel7.img`, just copy it to the root directory
 of an SD card along with all the files from the `firmware` directory.
+
+Want to use a higher level language? Take a look at my other repo, [Simplest
+Raspberry Pi 3 bare metal program in
+Zig](https://github.com/lmbarros/pi3-zig-simplest-bare-metal), which follows
+from here.
