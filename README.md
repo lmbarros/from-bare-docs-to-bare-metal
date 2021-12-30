@@ -1,6 +1,7 @@
 # From Bare Docs to Bare Metal
 
-Example code from my blog post From Bare Docs to Bare Metal <!-- Link! -->
+Example code from my blog post [From Bare Docs to Bare
+Metal](https://stackedboxes.org/2021/12/30/from-bare-docs-to-bare-metal/).
 
 This is a *very* simple program that sets the GPIO pin 16 of a Raspberry
 Pi&nbsp;3 to high. I don't know assembly, much less ARM assembly, but somehow
